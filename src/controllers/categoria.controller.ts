@@ -185,4 +185,44 @@ export class CategoriaController {
     return await this.categoriaRepository.dataSource.execute('SELECT * FROM vwTransaccionesDiaras');
   }
 
+  @get('/categorias/vista2')
+  async vista2(): Promise<any> {
+    let datos: any[] = await this.getVista2();
+    return datos;
+  }
+
+  async getVista2() {
+    return await this.categoriaRepository.dataSource.execute('SELECT * FROM vwVentasDeProductosPorCategorias');
+  }
+
+  @get('/categorias/vista3')
+  async vista3(): Promise<any> {
+    let datos: any[] = await this.getVista3();
+    return datos;
+  }
+
+  async getVista3() {
+    return await this.categoriaRepository.dataSource.execute('SELECT * FROM vwClientesDeudores');
+  }
+
+  @get('/categorias/vista4')
+  async vista4(): Promise<any> {
+    let datos: any[] = await this.getVista4();
+    return datos;
+  }
+
+  async getVista4() {
+    return await this.categoriaRepository.dataSource.execute('SELECT * FROM vwProdcutosPrecioProveedor');
+  }
+
+  @get('/categorias/vista5')
+  async vista5(): Promise<any> {
+    let datos: any[] = await this.getVista5();
+    return datos;
+  }
+
+  async getVista5() {
+    return await this.categoriaRepository.dataSource.execute('SELECT * FROM vwCuentaPersonal');
+  }
+
 }
